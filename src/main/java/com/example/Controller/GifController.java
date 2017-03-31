@@ -1,6 +1,8 @@
 package com.example.Controller;
 
+import com.example.dao.GifRepository;
 import com.example.model.Gif;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class GifController {
+
+    @Autowired
+    private GifRepository gifRepository;
 
     @GetMapping("/")
     public String listGifs() {
