@@ -40,7 +40,9 @@ public class GifController {
     }
 
     @RequestMapping("/favorites")
-    public String favorites(){
+    public String favorites(ModelMap modelMap){
+        List<Gif> allGifs2 = gifRepository.getAllGifs();
+        modelMap.addAttribute("gifs", allGifs2);
         return "favorites";
     }
 
