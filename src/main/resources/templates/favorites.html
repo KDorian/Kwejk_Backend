@@ -45,11 +45,13 @@
     </div>
     <div class="gifs container">
         <div class="row">
-            <div th:each="gif : ${gifs}" th:if="${not #lists.isEmpty(prod.comments)} class="col s12 l4">
+            <div th:each="gif : ${gifs}"  >
+                <div th:if="${gif.favorite}" class="col s12 l4">
                 <a th:href="@{|/gif/${gif.name}|}">
                     <img th:src="@{|/gifs/${gif.name}.gif|}" />
                     <a href="#" th:class="(${gif.favorite}? 'un' : '') + 'mark favorite'"></a>
                 </a>
+                </div>
             </div>
         </div>
     </div>
