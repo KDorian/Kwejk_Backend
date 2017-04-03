@@ -30,8 +30,18 @@ public class GifController {
     public String listGifts(ModelMap modelMap)
     {
         List<Gif> allGifs = gifRepository.getAllGifs();
-        modelMap.put("gifs",allGifs);
+        modelMap.addAttribute("gifs", allGifs);
         return "home";
+    }
+
+    @RequestMapping("/categories")
+    public String categories(){
+        return "categories";
+    }
+
+    @RequestMapping("/favorites")
+    public String favorites(){
+        return "favorites";
     }
 
 //krok11

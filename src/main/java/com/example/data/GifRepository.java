@@ -20,7 +20,7 @@ public class GifRepository {
             new Gif("infinite-andrew", "Marissa Mayer", true)
     );
 
-    private List<Gif> allGifs;
+
 
     public Gif findByName(String name){
         for (Gif gif : ALL_GIFS){
@@ -32,6 +32,8 @@ public class GifRepository {
     }
 
     public List<Gif> getAllGifs() {
-        return allGifs;
+        return ALL_GIFS;
     }
+
+
 }
