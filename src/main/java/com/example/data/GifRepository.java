@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.data;
 
 import com.example.model.Gif;
 import org.springframework.stereotype.Component;
@@ -19,6 +19,9 @@ public class GifRepository {
             new Gif("cowboy-coder", "Grace Hopper", false),
             new Gif("infinite-andrew", "Marissa Mayer", true)
     );
+
+    private List<Gif> allGifs;
+
     public Gif findByName(String name){
         for (Gif gif : ALL_GIFS){
             if ( gif.getName().equals(name)){
@@ -26,5 +29,9 @@ public class GifRepository {
             }
         }
         return null;
+    }
+
+    public List<Gif> getAllGifs() {
+        return allGifs;
     }
 }
